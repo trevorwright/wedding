@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import Confetti from 'react-confetti'
 
-import { media } from '../../styles'
+import { media, colors } from '../../styles'
 
 import heroImage from '../../../assets/hero.jpg'
 
@@ -85,6 +86,7 @@ const Message = styled.h4`
 
 const Hero = () => (
   <HeroContainer>
+    <Confetti width={1920} height={1080} opacity={0.5} recycle={false} />
     <HeroContent>
       <Names>Katelyn & Trevor</Names>
       <Message>are getting married!</Message>
