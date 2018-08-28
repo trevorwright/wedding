@@ -2,13 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 import Confetti from 'react-confetti'
 
-import { media, colors } from '../../styles'
+import { media } from '../../styles'
 
 import heroImage from '../../../assets/hero.jpg'
 
 const HeroContainer = styled.div`
-  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
-
   display: flex;
   flex-direction: column;
   justify-content: center;

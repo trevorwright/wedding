@@ -1,10 +1,12 @@
-import { css } from 'styled-components';
+import { css } from 'styled-components'
 
 const SYSTEM_FONTS = `system, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-'Segoe UI Symbol'`;
+'Segoe UI Symbol'`
 
 const globalCssReset = css`
+  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
+
   html,
   body,
   div,
@@ -140,7 +142,7 @@ const globalCssReset = css`
     background: transparent;
     outline: none;
   }
-`;
+`
 
 export default css`
   ${globalCssReset};
@@ -161,4 +163,4 @@ export default css`
     background-color: #fff;
     color: #363636;
   }
-`;
+`
