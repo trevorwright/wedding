@@ -1,6 +1,6 @@
 import { css } from 'styled-components'
 
-const SYSTEM_FONTS = `system, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+const SYSTEM_FONTS = `'Josefin Sans', system, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 'Segoe UI Symbol'`
 

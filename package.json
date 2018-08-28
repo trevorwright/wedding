@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "polished": "^2.0.3",
     "react": "^16.0.0",
     "react-confetti": "^2.3.0",
     "react-dom": "^16.0.0",
