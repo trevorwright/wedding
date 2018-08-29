@@ -29,11 +29,15 @@ export default {
         <Html>
           <Head>
             <meta charSet="UTF-8" />
-            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <meta
+              name="viewport"
+              content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no"
+            />
             <link
               href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700"
               rel="stylesheet"
             />
+            <title>Wright Together 2019</title>
             {renderMeta.styleTags}
           </Head>
           <Body>{children}</Body>

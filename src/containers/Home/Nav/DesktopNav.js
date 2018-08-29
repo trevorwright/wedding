@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { media } from '../../../styles'
 import navItems from './nav-items'
 
+import NavLogo from './NavLogo'
+
 const NavContainer = styled.nav`
   position: absolute;
   z-index: 10;
@@ -26,11 +28,6 @@ const NavContainer = styled.nav`
   `};
 `
 
-const InitialsLogo = styled.div`
-  font-size: 22px;
-  letter-spacing: 8px;
-`
-
 const NavItems = styled.ul`
   display: flex;
 `
@@ -52,7 +49,7 @@ const NavItem = styled.li`
     left: 0;
     background: #fff;
     transform: scaleX(0);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease;
   }
 
   &:hover {
@@ -64,7 +61,7 @@ const NavItem = styled.li`
 const Nav = () => (
   <header>
     <NavContainer>
-      <InitialsLogo>K&T</InitialsLogo>
+      <NavLogo />
       <NavItems>
         {navItems.map(({ text }) => (
           <NavItem key={text}>{text}</NavItem>
