@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import { transparentize } from 'polished'
-
-const NAV_ITEMS = [{ text: 'Home' }, { text: 'Story' }, { text: 'Gallery' }, { text: 'Event' }]
+import { media } from '../../../styles'
+import navItems from './nav-items'
 
 const NavContainer = styled.nav`
   position: absolute;
@@ -15,18 +14,21 @@ const NavContainer = styled.nav`
   color: #fff;
   padding: 12px 16px;
 
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 200;
+
+  ${media.medium`
+    font-size: 22px;
+  `};
+
+  ${media.smallDown`
+    display: none;
+  `};
 `
 
 const InitialsLogo = styled.div`
   font-size: 22px;
   letter-spacing: 8px;
-`
-
-const ItemsContainer = styled.div`
-  display: flex;
-  align-items: center;
 `
 
 const NavItems = styled.ul`
@@ -35,7 +37,11 @@ const NavItems = styled.ul`
 
 const NavItem = styled.li`
   position: relative;
-  margin-right: 32px;
+  margin-left: 16px;
+
+  ${media.medium`
+    margin-left: 32px;
+  `};
 
   &:after {
     content: '';
@@ -55,36 +61,15 @@ const NavItem = styled.li`
     }
   }
 `
-
-const RsvpButton = styled.button`
-  border: 1px solid #fff;
-  border-radius: 5px;
-  color: #fff;
-  padding: 6px 10px 2px 10px;
-  cursor: pointer;
-  transition: background 0.3s;
-
-  &:hover {
-    background: ${transparentize(0.5, '#fff')};
-  }
-
-  &:active {
-    background: ${transparentize(0.3, '#fff')};
-  }
-`
-
 const Nav = () => (
   <header>
     <NavContainer>
       <InitialsLogo>K&T</InitialsLogo>
-      <ItemsContainer>
-        <NavItems>
-          {NAV_ITEMS.map(({ text }) => (
-            <NavItem key={text}>{text}</NavItem>
-          ))}
-        </NavItems>
-        <RsvpButton>RSVP</RsvpButton>
-      </ItemsContainer>
+      <NavItems>
+        {navItems.map(({ text }) => (
+          <NavItem key={text}>{text}</NavItem>
+        ))}
+      </NavItems>
     </NavContainer>
   </header>
 )
