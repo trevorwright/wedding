@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { transparentize } from 'polished'
 
+const NAV_ITEMS = [{ text: 'Home' }, { text: 'Story' }, { text: 'Gallery' }, { text: 'Event' }]
+
 const NavContainer = styled.nav`
   position: absolute;
   z-index: 10;
@@ -14,13 +16,44 @@ const NavContainer = styled.nav`
   padding: 12px 16px;
 
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 200;
 `
 
 const InitialsLogo = styled.div`
   font-size: 22px;
   letter-spacing: 8px;
-  font-weight: 200;
+`
+
+const ItemsContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const NavItems = styled.ul`
+  display: flex;
+`
+
+const NavItem = styled.li`
+  position: relative;
+  margin-right: 32px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  &:hover {
+    &:after {
+      transform: scaleX(1);
+    }
+  }
 `
 
 const RsvpButton = styled.button`
@@ -44,9 +77,14 @@ const Nav = () => (
   <header>
     <NavContainer>
       <InitialsLogo>K&T</InitialsLogo>
-      <div>
+      <ItemsContainer>
+        <NavItems>
+          {NAV_ITEMS.map(({ text }) => (
+            <NavItem key={text}>{text}</NavItem>
+          ))}
+        </NavItems>
         <RsvpButton>RSVP</RsvpButton>
-      </div>
+      </ItemsContainer>
     </NavContainer>
   </header>
 )
