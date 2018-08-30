@@ -38,7 +38,7 @@ const MenuButton = styled.button`
 
 class MobileNav extends Component {
   state = {
-    drawerOpen: true
+    drawerOpen: false
   }
 
   toggleDrawer = () => {

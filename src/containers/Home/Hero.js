@@ -21,6 +21,7 @@ const HeroContainer = styled.div`
   background: url(${heroImage});
   background-size: cover;
   background-position: 40%;
+  background-attachment: fixed;
 
   &:before {
     content: '';
