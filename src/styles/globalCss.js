@@ -5,7 +5,7 @@ Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 'Segoe UI Symbol'`
 
 const globalCssReset = css`
-  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
+  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400');
 
   html,
   body,
