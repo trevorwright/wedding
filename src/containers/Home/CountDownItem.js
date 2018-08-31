@@ -9,7 +9,16 @@ const ItemContainer = styled.div`
   width: 40px;
 `
 
-const Text = styled.span`
+const Count = styled.span`
+  font-weight: 300;
+  font-size: 24px;
+
+  ${media.small`
+    font-size: 32px;
+  `};
+`
+
+const Label = styled.span`
   font-weight: 300;
   font-size: 16px;
 
@@ -28,9 +37,9 @@ const Divider = styled.hr`
 
 const CountDownItem = ({ children, label }) => (
   <ItemContainer>
-    <Text>{children}</Text>
+    <Count>{children}</Count>
     <Divider />
-    <Text>{label}</Text>
+    <Label>{label}</Label>
   </ItemContainer>
 )
 

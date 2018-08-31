@@ -34,13 +34,17 @@ const Image = styled.img`
   ${media.medium`
     margin: 0 32px 0 0;
   `};
+
+  ${media.large`
+    margin: 0 64px 0 0;
+  `};
 `
 
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 750px;
+  max-width: 900px;
   margin: 0 auto;
 
   ${media.medium`
