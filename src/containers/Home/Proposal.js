@@ -56,7 +56,7 @@ const Message = styled.h4`
   width: 100%;
 
   font-size: 22px;
-  font-weight: 200;
+  font-weight: 300;
   text-transform: uppercase;
   color: #fff;
   text-align: center;

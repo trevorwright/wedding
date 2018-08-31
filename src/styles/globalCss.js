@@ -147,6 +147,12 @@ const globalCssReset = css`
 export default css`
   ${globalCssReset};
 
+  html,
+  body {
+    overflow-x: hidden;
+    position: relative;
+  }
+
   html {
     box-sizing: border-box;
   }
@@ -162,6 +168,5 @@ export default css`
     font-size: 14px;
     background-color: #fff;
     color: #363636;
-    overflow-x: hidden;
   }
 `

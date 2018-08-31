@@ -42,7 +42,6 @@ class MobileNav extends Component {
   }
 
   toggleDrawer = () => {
-    console.log('toggle')
     this.setState(prevState => ({
       drawerOpen: !prevState.drawerOpen
     }))

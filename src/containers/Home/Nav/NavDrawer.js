@@ -14,7 +14,7 @@ const Drawer = styled.nav`
   background: #fff;
   width: 80vw;
   z-index: 10;
-  transition: transform 0.4s ease;
+  transition: transform 0.3s ease;
 
   transform: translateX(100%);
 
