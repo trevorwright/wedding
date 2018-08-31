@@ -1,8 +1,23 @@
-import React, { Fragment } from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components'
+import {
+  differenceInMonths,
+  subMonths,
+  differenceInDays,
+  subDays,
+  differenceInHours,
+  subHours,
+  differenceInMinutes,
+  subMinutes,
+  differenceInSeconds
+} from 'date-fns'
 import { media } from '../../styles'
 
 import proposalImage from '../../../assets/proposal.png'
+import CountDownItem from './CountDownItem'
+
+const WEDDING_DATE = new Date(2019, 7, 9, 15)
+console.log(WEDDING_DATE.toString())
 
 const Container = styled.section`
   position: relative;
@@ -26,28 +41,94 @@ const Container = styled.section`
   }
 `
 
-const Message = styled.h4`
+const ContentContainer = styled.div`
   position: absolute;
+  padding-top: 200px;
   width: 100%;
-  padding-top: 300px;
+`
 
-  font-size: 28px;
+const Message = styled.h4`
+  width: 100%;
+
+  font-size: 22px;
   font-weight: 200;
   text-transform: uppercase;
   color: #fff;
   text-align: center;
+
+  ${media.small`
+    font-size: 30px;
+  `};
 
   ${media.medium`
     font-size: 40px;
   `};
 `
 
-const Proposal = () => (
-  <Fragment>
-    <Container>
-      <Message>Forever starts here</Message>
-    </Container>
-  </Fragment>
-)
+const CountdownContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  margin: 24px auto 0 auto;
+  max-width: 900px;
+`
+
+class Proposal extends Component {
+  state = {
+    monthsLeft: 0,
+    daysLeft: 0,
+    hoursLeft: 0,
+    minutesLeft: 0,
+    secondsLeft: 0
+  }
+
+  componentDidMount() {
+    this.calculateTimeRemaining()
+    this.updateInterval = setInterval(() => this.calculateTimeRemaining(), 1000)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.updateInterval)
+  }
+
+  calculateTimeRemaining() {
+    const now = new Date()
+    let unaccountedTime = new Date()
+
+    const monthsLeft = differenceInMonths(WEDDING_DATE, unaccountedTime)
+    unaccountedTime = subMonths(WEDDING_DATE, monthsLeft)
+
+    const daysLeft = differenceInDays(unaccountedTime, now)
+    unaccountedTime = subDays(unaccountedTime, daysLeft)
+
+    const hoursLeft = differenceInHours(unaccountedTime, now)
+    unaccountedTime = subHours(unaccountedTime, hoursLeft)
+
+    const minutesLeft = differenceInMinutes(unaccountedTime, now)
+    unaccountedTime = subMinutes(unaccountedTime, minutesLeft)
+
+    const secondsLeft = differenceInSeconds(unaccountedTime, now)
+
+    this.setState({ monthsLeft, daysLeft, hoursLeft, minutesLeft, secondsLeft })
+  }
+
+  render() {
+    const { monthsLeft, daysLeft, hoursLeft, minutesLeft, secondsLeft } = this.state
+
+    return (
+      <Container>
+        <ContentContainer>
+          <Message>Forever starts here</Message>
+          <CountdownContainer>
+            <CountDownItem label="Months">{monthsLeft}</CountDownItem>
+            <CountDownItem label="Days">{daysLeft}</CountDownItem>
+            <CountDownItem label="Hours">{hoursLeft}</CountDownItem>
+            <CountDownItem label="Minutes">{minutesLeft}</CountDownItem>
+            <CountDownItem label="Seconds">{secondsLeft}</CountDownItem>
+          </CountdownContainer>
+        </ContentContainer>
+      </Container>
+    )
+  }
+}
 
 export default Proposal
