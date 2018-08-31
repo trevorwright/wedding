@@ -162,5 +162,6 @@ export default css`
     font-size: 14px;
     background-color: #fff;
     color: #363636;
+    overflow-x: hidden;
   }
 `

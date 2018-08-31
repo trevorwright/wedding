@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from '../../styles'
-import coupleWaterImg from '../../../assets/couple-water.jpg'
+import coupleWaterImage from '../../../assets/couple-water.jpg'
 
 const Container = styled.section`
   display: flex;
@@ -66,9 +66,7 @@ const Title = styled.h3`
 `
 
 const OurStory = styled.p`
-  ${media.small`
-    padding: 0 40px;
-  `};
+  padding: 0 40px;
 
   ${media.medium`
     padding: 0;
@@ -79,7 +77,7 @@ const Story = () => (
   <Container>
     <Title>Our Story</Title>
     <ContentContainer>
-      <Image src={coupleWaterImg} alt="" />
+      <Image src={coupleWaterImage} alt="" />
       <OurStory>
         Lorem ipsum dolor sit amet consectetur adipiscing elit fames parturient, tortor proin aptent
         turpis etiam habitant dictumst accumsan, eget donec justo vivamus iaculis tincidunt pretium
