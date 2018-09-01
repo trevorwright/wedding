@@ -7,20 +7,23 @@ import { media } from '../../../styles'
 import navItems from './nav-items'
 
 const Drawer = styled.nav`
-  position: absolute;
+  position: fixed;
   right: 0;
-  top: 0;
-  bottom: 0;
+  margin-top: 4px;
   background: #fff;
   width: 80vw;
   z-index: 10;
-  transition: transform 0.3s ease;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
 
+  transition: transform 0.3s ease;
   transform: translateX(100%);
 
   ${props =>
     props.open &&
     css`
+      margin-right: 4px;
       transform: translateX(0);
     `};
 

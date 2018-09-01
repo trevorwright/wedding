@@ -8,7 +8,7 @@ import NavLogo from './NavLogo'
 import NavDrawer from './NavDrawer'
 
 const NavHeader = styled.header`
-  position: absolute;
+  position: fixed;
   z-index: 10;
   left: 0;
   right: 0;
@@ -18,6 +18,7 @@ const NavHeader = styled.header`
   align-items: center;
   padding: 12px 16px;
   color: #fff;
+  background: rgba(0, 0, 0, 0.5);
 
   ${media.small`
     display: none;
@@ -38,12 +39,12 @@ const MenuButton = styled.button`
 
 class MobileNav extends Component {
   state = {
-    drawerOpen: false
+    drawerOpen: false,
   }
 
   toggleDrawer = () => {
     this.setState(prevState => ({
-      drawerOpen: !prevState.drawerOpen
+      drawerOpen: !prevState.drawerOpen,
     }))
   }
 
