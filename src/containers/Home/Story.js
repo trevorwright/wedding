@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from '../../styles'
-import coupleWaterImage from '../../../assets/couple-water.jpg'
+import ourStoryImage from '../../../assets/story.jpg'
 
 const Container = styled.section`
   display: flex;
@@ -14,16 +14,18 @@ const Container = styled.section`
   box-shadow: inset 0px 5px 10px -1px rgba(0, 0, 0, 0.3);
 
   ${media.medium`
-    padding: 24px 40px;
+    padding: 80px 40px;
   `};
 `
 
 const Image = styled.img`
   display: none;
+  object-fit: cover;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   margin-bottom: 32px;
+  flex-shrink: 0;
 
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 
@@ -81,7 +83,7 @@ const Story = () => (
   <Container>
     <Title>Our Story</Title>
     <ContentContainer>
-      <Image src={coupleWaterImage} alt="" />
+      <Image src={ourStoryImage} alt="" />
       <OurStory>
         Lorem ipsum dolor sit amet consectetur adipiscing elit fames parturient, tortor proin aptent
         turpis etiam habitant dictumst accumsan, eget donec justo vivamus iaculis tincidunt pretium

@@ -13,20 +13,22 @@ import {
 } from 'date-fns'
 import { media } from '../../styles'
 
-import proposalImageSmall from '../../../assets/proposal-small.png'
-import proposalImageLarge from '../../../assets/proposal-large.png'
+import countdownLargeImage from '../../../assets/countdown/large.jpg'
 import CountDownItem from './CountDownItem'
 
 const WEDDING_DATE = new Date(2019, 7, 9, 15)
 console.log(WEDDING_DATE.toString())
 
 const Container = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 
   color: white;
-  min-height: 400px;
+  min-height: 600px;
 
-  background-image: url(${proposalImageSmall});
+  background-image: url(${countdownLargeImage});
   background-size: cover;
   background-position: center;
 
@@ -40,16 +42,10 @@ const Container = styled.section`
     opacity: 0.3;
     background: #363636;
   }
-
-  ${media.large`
-  background-image: url(${proposalImageLarge});
-  `};
 `
 
 const ContentContainer = styled.div`
   position: absolute;
-  padding-top: 200px;
-  width: 100%;
 `
 
 const Message = styled.h4`

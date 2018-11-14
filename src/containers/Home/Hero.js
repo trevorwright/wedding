@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { media } from '../../styles'
 
-import heroImage from '../../../assets/hero.jpg'
+import heroLargeImage from '../../../assets/hero/large.jpg'
 
 const HeroContainer = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ const HeroContainer = styled.div`
   height: 100vh;
   width: 100%;
   max-height: 1300px;
-  background: url(${heroImage});
+  background: url(${heroLargeImage});
   background-size: cover;
   background-position: 40%;
 
