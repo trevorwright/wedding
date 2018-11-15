@@ -117,7 +117,7 @@ class Proposal extends Component {
     const { monthsLeft, daysLeft, hoursLeft, minutesLeft, secondsLeft } = this.state
 
     return (
-      <Container>
+      <Container name="countdown">
         <ContentContainer>
           <Message>Forever starts here</Message>
           <CountdownContainer>

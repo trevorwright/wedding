@@ -85,7 +85,7 @@ const OurStory = styled.div`
 `
 
 const Story = () => (
-  <Container>
+  <Container name="story">
     <Title>Our Story</Title>
     <ContentContainer>
       <Image src={ourStoryImage} alt="" />
