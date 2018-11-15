@@ -71,7 +71,7 @@ const Title = styled.h3`
   }
 `
 
-const OurStory = styled.p`
+const OurStory = styled.div`
   padding: 0 40px;
   text-align: left;
 

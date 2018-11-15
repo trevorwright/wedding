@@ -20,7 +20,7 @@ const HeroContainer = styled.div`
   max-height: 1300px;
   background: url(${heroLargeImage});
   background-size: cover;
-  background-position: 40%;
+  background-position: 60% 80%;
 
   &:before {
     content: '';
