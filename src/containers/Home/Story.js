@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from '../../styles'
-import coupleWaterImage from '../../../assets/couple-water.jpg'
+import ourStoryImage from '../../../assets/story.jpg'
 
 const Container = styled.section`
   display: flex;
@@ -14,16 +14,18 @@ const Container = styled.section`
   box-shadow: inset 0px 5px 10px -1px rgba(0, 0, 0, 0.3);
 
   ${media.medium`
-    padding: 24px 40px;
+    padding: 80px 40px;
   `};
 `
 
 const Image = styled.img`
   display: none;
+  object-fit: cover;
   width: 200px;
   height: 200px;
   border-radius: 50%;
   margin-bottom: 32px;
+  flex-shrink: 0;
 
   box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 
@@ -34,13 +36,17 @@ const Image = styled.img`
   ${media.medium`
     margin: 0 32px 0 0;
   `};
+
+  ${media.large`
+    margin: 0 64px 0 0;
+  `};
 `
 
 const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 750px;
+  max-width: 900px;
   margin: 0 auto;
 
   ${media.medium`
@@ -65,8 +71,13 @@ const Title = styled.h3`
   }
 `
 
-const OurStory = styled.p`
+const OurStory = styled.div`
   padding: 0 40px;
+  text-align: left;
+
+  p:not(:last-child) {
+    margin-bottom: 12px;
+  }
 
   ${media.medium`
     padding: 0;
@@ -74,28 +85,33 @@ const OurStory = styled.p`
 `
 
 const Story = () => (
-  <Container>
+  <Container name="story">
     <Title>Our Story</Title>
     <ContentContainer>
-      <Image src={coupleWaterImage} alt="" />
+      <Image src={ourStoryImage} alt="" />
       <OurStory>
-        Lorem ipsum dolor sit amet consectetur adipiscing elit fames parturient, tortor proin aptent
-        turpis etiam habitant dictumst accumsan, eget donec justo vivamus iaculis tincidunt pretium
-        posuere. Convallis luctus nec massa justo ornare dignissim eu leo ultricies auctor, quis at
-        dis praesent adipiscing amet quisque vel odio. Lectus sagittis conubia semper orci amet sit
-        cum, in interdum nam congue pretium faucibus. Mi suspendisse class ligula habitasse a fames
-        mauris per magnis, cursus vehicula dolor natoque sit inceptos aptent pellentesque diam,
-        ipsum mattis dapibus cum penatibus eu turpis risus. Arcu neque enim elit vestibulum turpis
-        eros congue fames etiam, tristique leo inceptos varius fermentum mi sapien dapibus, netus
-        amet purus duis proin ridiculus vehicula nisl. Augue ultricies semper a vehicula nullam
-        posuere rutrum etiam habitasse, porta mattis inceptos aptent class donec ligula vivamus,
-        phasellus auctor ut cubilia pretium senectus est varius. Pellentesque non nisi condimentum
-        nascetur duis fames a suscipit elit sapien elementum mattis, inceptos velit gravida praesent
-        nullam arcu accumsan enim iaculis quam. Primis elementum mollis mi lobortis non malesuada
-        arcu enim diam a neque, ultricies ad aptent lectus nam ipsum posuere hac habitant faucibus
-        elit proin, interdum et litora taciti viverra curae habitasse vel facilisi platea. Ultricies
-        ipsum tellus libero mattis lectus ultrices vestibulum, magnis dictum semper netus vitae nam
-        imperdiet, non litora felis tortor penatibus conubia.
+        <p>He was the grocery clerk. She was the cashier. You know how it goes.</p>
+        <p>
+          It turns out Metro is a pretty romantic place. Just kidding. But it is where it all
+          started. Over one of our shared breaks in the Metro breakroom (which Katelyn thought
+          nothing of, and Trevor planned very carefully), we found out he was also the boy next
+          door. Much more romantic. We’ll stick with that from now on.
+        </p>
+        <p>
+          After a few months of “just friends”, it all began in September 2012. It has been just
+          over 6 years, and with every day that passes (and road trip, sushi date, and cat selfie),
+          we feel more confident that we belong together. You might even say that we are Wright
+          together.
+        </p>
+        <p>
+          Trevor proposed on May 25, 2018. He somehow found the perfect mix between an intimate,
+          romantic proposal and knowing that Kate would want to share the news in person, and
+          celebrate one of the most exciting days of their lives with their family and closest
+          friends. The result was one incredible surprise during what Katelyn thought was a casual
+          hike, one fake party to celebrate her “finishing her first year of graduate school”, MANY
+          confused friends and family, and eventually, lots of tears and champagne. It was perfect.
+        </p>
+        <p>Theme: “I had no idea.” - Kate</p>
       </OurStory>
     </ContentContainer>
   </Container>

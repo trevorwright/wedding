@@ -1,7 +1,6 @@
 export default [
-  { text: 'Home' },
-  { text: 'Story' },
-  { text: 'Gallery' },
-  { text: 'Event' },
-  { text: 'RSVP' },
+  { text: 'Story', target: 'story' },
+  { text: 'Countdown', target: 'countdown' },
+  { text: 'Event', target: 'event' }
+  // { text: 'RSVP' },
 ]

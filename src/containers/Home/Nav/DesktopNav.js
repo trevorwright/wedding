@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import * as Scroll from 'react-scroll'
 import { media } from '../../../styles'
 import navItems from './nav-items'
 
@@ -63,8 +64,12 @@ const Nav = () => (
     <NavContainer>
       <NavLogo />
       <NavItems>
-        {navItems.map(({ text }) => (
-          <NavItem key={text}>{text}</NavItem>
+        {navItems.map(({ text, target }) => (
+          <NavItem key={text}>
+            <Scroll.Link to={target} smooth duration={500}>
+              {text}
+            </Scroll.Link>
+          </NavItem>
         ))}
       </NavItems>
     </NavContainer>

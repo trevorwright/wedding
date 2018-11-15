@@ -5,7 +5,7 @@ Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
 'Segoe UI Symbol'`
 
 const globalCssReset = css`
-  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700');
+  @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400');
 
   html,
   body,
@@ -147,6 +147,12 @@ const globalCssReset = css`
 export default css`
   ${globalCssReset};
 
+  html,
+  body {
+    overflow-x: hidden;
+    position: relative;
+  }
+
   html {
     box-sizing: border-box;
   }
@@ -162,6 +168,5 @@ export default css`
     font-size: 14px;
     background-color: #fff;
     color: #363636;
-    overflow-x: hidden;
   }
 `

@@ -13,19 +13,22 @@ import {
 } from 'date-fns'
 import { media } from '../../styles'
 
-import proposalImage from '../../../assets/proposal.png'
+import countdownLargeImage from '../../../assets/countdown/large.jpg'
 import CountDownItem from './CountDownItem'
 
 const WEDDING_DATE = new Date(2019, 7, 9, 15)
 console.log(WEDDING_DATE.toString())
 
 const Container = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 
   color: white;
-  min-height: 400px;
+  min-height: 600px;
 
-  background-image: url(${proposalImage});
+  background-image: url(${countdownLargeImage});
   background-size: cover;
   background-position: center;
 
@@ -43,7 +46,6 @@ const Container = styled.section`
 
 const ContentContainer = styled.div`
   position: absolute;
-  padding-top: 200px;
   width: 100%;
 `
 
@@ -51,7 +53,7 @@ const Message = styled.h4`
   width: 100%;
 
   font-size: 22px;
-  font-weight: 200;
+  font-weight: 300;
   text-transform: uppercase;
   color: #fff;
   text-align: center;
@@ -68,7 +70,7 @@ const Message = styled.h4`
 const CountdownContainer = styled.div`
   display: flex;
   justify-content: space-around;
-  margin: 24px auto 0 auto;
+  margin: 16px auto 0 auto;
   max-width: 900px;
 `
 
@@ -115,7 +117,7 @@ class Proposal extends Component {
     const { monthsLeft, daysLeft, hoursLeft, minutesLeft, secondsLeft } = this.state
 
     return (
-      <Container>
+      <Container name="countdown">
         <ContentContainer>
           <Message>Forever starts here</Message>
           <CountdownContainer>
