@@ -46,6 +46,7 @@ const Container = styled.section`
 
 const ContentContainer = styled.div`
   position: absolute;
+  width: 100%;
 `
 
 const Message = styled.h4`
