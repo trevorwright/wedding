@@ -1,42 +1,13 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { media } from '../../styles'
 
+import { Hero as HeroLayout } from '../../components'
 import heroLargeImage from '../../../assets/hero/large.jpg'
 
-const HeroContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  position: relative;
-
-  color: #fff;
-
-  height: 100vh;
-  width: 100%;
-  max-height: 1300px;
-  background: url(${heroLargeImage});
-  background-size: cover;
+const customHeroStyles = css`
   background-position: 60% 80%;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #000;
-    opacity: 0.6;
-  }
-`
-
-const HeroContent = styled.div`
-  z-index: 2;
-  text-align: center;
 `
 
 const Names = styled.h1`
@@ -65,6 +36,7 @@ const Names = styled.h1`
 const Message = styled.h4`
   font-size: 18px;
   font-weight: 200;
+  text-transform: initial;
 
   ${media.small`
     font-size: 22px;
@@ -81,12 +53,10 @@ const Message = styled.h4`
 `
 
 const Hero = () => (
-  <HeroContainer>
-    <HeroContent>
-      <Names>Katelyn & Trevor</Names>
-      <Message>are getting married!</Message>
-    </HeroContent>
-  </HeroContainer>
+  <HeroLayout height="100vh" image={heroLargeImage} css={customHeroStyles}>
+    <Names>Katelyn & Trevor</Names>
+    <Message>are getting married!</Message>
+  </HeroLayout>
 )
 
 export default Hero

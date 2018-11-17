@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components'
 import { lighten } from 'polished'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import * as Scroll from 'react-scroll'
 import { media } from '../../../styles'
 import navItems from './nav-items'
 
@@ -84,8 +85,12 @@ const NavDrawer = ({ onClose, open }) => (
       Menu
     </Header>
     <MenuItems>
-      {navItems.map(({ text }) => (
-        <MenuItem key={text}>{text}</MenuItem>
+      {navItems.map(({ text, target }) => (
+        <MenuItem key={text}>
+          <Scroll.Link to={target} smooth duration={500} onClick={onClose}>
+            {text}
+          </Scroll.Link>
+        </MenuItem>
       ))}
     </MenuItems>
   </Drawer>

@@ -6,19 +6,23 @@ import navItems from './nav-items'
 
 import NavLogo from './NavLogo'
 
+const NAV_HEIGHT = 60
+
 const NavContainer = styled.nav`
-  position: absolute;
+  position: fixed;
   z-index: 10;
   width: 100%;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
   padding: 12px 16px;
+  height: ${NAV_HEIGHT}px;
 
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 300;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.4);
 
   ${media.medium`
     font-size: 22px;
@@ -66,7 +70,7 @@ const Nav = () => (
       <NavItems>
         {navItems.map(({ text, target }) => (
           <NavItem key={text}>
-            <Scroll.Link to={target} smooth duration={500}>
+            <Scroll.Link to={target} offset={-NAV_HEIGHT} smooth duration={500}>
               {text}
             </Scroll.Link>
           </NavItem>
