@@ -87,7 +87,7 @@ const NavDrawer = ({ onClose, open }) => (
     <MenuItems>
       {navItems.map(({ text, target }) => (
         <MenuItem key={text}>
-          <Scroll.Link to={target} smooth duration={500}>
+          <Scroll.Link to={target} smooth duration={500} onClick={onClose}>
             {text}
           </Scroll.Link>
         </MenuItem>
