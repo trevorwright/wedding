@@ -58,7 +58,7 @@ const Story = () => (
         more confident that we belong together. You might even say that we are Wright together.
       </p>
       <p>
-        Trevor proposed on May 25, 2018. He somehow found the perfect mix between an intimate,
+        Trevor proposed on May 26, 2018. He somehow found the perfect mix between an intimate,
         romantic proposal and knowing that Kate would want to share the news in person, and
         celebrate one of the most exciting days of their lives with their family and closest
         friends. The result was one incredible surprise during what Katelyn thought was a casual

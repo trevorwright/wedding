@@ -40,11 +40,16 @@ const HeroContainer = styled.div`
 const HeroContent = styled.div`
   z-index: 2;
   text-align: center;
-  font-size: 24px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 4px;
   width: 100%;
+  padding: 0 16px;
+
+  ${media.medium`
+    font-size: 24px;
+  `};
 `
 
 const Hero = ({ children, ...rest }) => (

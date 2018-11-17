@@ -1,6 +1,5 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { media } from '../../../styles'
 
 const Container = styled.button`
   padding: 16px;
@@ -62,6 +61,7 @@ const ComingSoon = styled.h4`
   z-index: 20;
   top: 50%;
   left: 50%;
+  width: 100%;
   transform: translateY(-50%) translateX(-50%);
 `
 

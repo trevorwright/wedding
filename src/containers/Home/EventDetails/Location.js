@@ -14,8 +14,9 @@ const Detail = styled.h4`
 const Location = () => (
   <ImageDetails title="Kurtz Orchards" image={kurtzImage}>
     <Detail bold>August 9th, 2019</Detail>
-    <Detail>Ceremony - 2:30 PM - 3:30 PM</Detail>
-    <Detail>Reception - 3:30 PM - 12:00 AM</Detail>
+    <Detail>Ceremony - 2:30 PM - 3:00 PM</Detail>
+    <Detail>Cocktails - 3:00 PM - 5:00 PM</Detail>
+    <Detail>Reception - 5:00 PM - 12:00 AM</Detail>
   </ImageDetails>
 )
 

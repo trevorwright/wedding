@@ -11,15 +11,19 @@ const Container = styled.div`
 
 const Directions = styled.a``
 
+const NoBreak = styled.span`
+  white-space: nowrap;
+`
+
 const Details = () => (
   <Container>
     <p>
-      The ceremony will be held at Gracewood Estates, Kurtz Orchards. Cocktail hour will immediately
-      follow. A reception will follow at The Market, Kurtz Orchards. Transportation from cocktail
-      hour to the reception will be provided.
+      Our ceremony and cocktail hour will be held at Gracewood Estates, Kurtz Orchards. Dinner and
+      dancing will follow at Kurtz Orchards Market. Transportation from cocktail hour to the
+      <NoBreak>reception will be provided.</NoBreak>
     </p>
     <p>
-      We can't wait to celebrate and dance the <span>night away with you!</span>
+      We can't wait to celebrate and dance the <NoBreak>night away with you!</NoBreak>
     </p>
     <Directions href={DIRECTIONS_LINK} target="_blank">
       Directions to Kurtz Orchards

@@ -40,9 +40,13 @@ const Details = styled.div`
   }
 `
 
+const Bold = styled.span`
+  font-weight: 500;
+`
+
 const Hotel = () => (
   <div name="hotel">
-    <Hero image={hotelImage}>Accommodations</Hero>
+    <Hero image={hotelImage}>Accommodations & Transportation</Hero>
     <Section>
       <HotelLayout>
         <ImageDetails title="Hotel" image={hotelRoomImage}>
@@ -52,9 +56,9 @@ const Hotel = () => (
         </ImageDetails>
         <Details>
           <p>
-            All guests who book at the following hotels will have access to a free shuttle to and
-            from the venue. Unfortunately, we were unable to arrange a formal room block for our
-            guests, so be sure to book soon. We suggest requesting early check-in when you call.
+            All guests who book a room at The Holiday Inn St. Catharines will be offered a free
+            shuttle to and from the venue. We recommend booking as soon as possible as{' '}
+            <Bold>space is limited</Bold>. We also suggest requesting early check-in when you call.
           </p>
           <a href={HOTEL_DIRECTIONS}>Directions to hotel</a>
         </Details>
