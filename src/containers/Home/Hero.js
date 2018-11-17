@@ -1,10 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { media } from '../../styles'
 
 import { Hero as HeroLayout } from '../../components'
 import heroLargeImage from '../../../assets/hero/large.jpg'
+
+const customHeroStyles = css`
+  background-position: 60% 80%;
+`
 
 const Names = styled.h1`
   font-weight: 100;
@@ -49,7 +53,7 @@ const Message = styled.h4`
 `
 
 const Hero = () => (
-  <HeroLayout height="100vh" image={heroLargeImage}>
+  <HeroLayout height="100vh" image={heroLargeImage} css={customHeroStyles}>
     <Names>Katelyn & Trevor</Names>
     <Message>are getting married!</Message>
   </HeroLayout>

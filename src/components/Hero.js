@@ -16,7 +16,7 @@ const HeroContainer = styled.div`
   max-height: 1300px;
   background: url(${props => props.image});
   background-size: cover;
-  background-position: 60% 80%;
+  background-position: center;
 
   &:before {
     content: '';
@@ -28,6 +28,8 @@ const HeroContainer = styled.div`
     background: #000;
     opacity: 0.4;
   }
+
+  ${props => props.css};
 `
 
 const HeroContent = styled.div`
@@ -37,6 +39,7 @@ const HeroContent = styled.div`
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 4px;
+  width: 100%;
 `
 
 const Hero = ({ children, ...rest }) => (

@@ -1,7 +1,12 @@
 import React from 'react'
-import { Hero } from '../../components'
+import { Hero, Section } from '../../components'
 import eventImage from '../../../assets/event.jpg'
 
-const EventDetails = () => <Hero image={eventImage}>Event Details</Hero>
+const EventDetails = () => (
+  <React.Fragment>
+    <Hero image={eventImage}>Event Details</Hero>
+    <Section>WOWWWW</Section>
+  </React.Fragment>
+)
 
 export default EventDetails

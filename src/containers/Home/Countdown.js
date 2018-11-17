@@ -13,41 +13,11 @@ import {
 } from 'date-fns'
 import { media } from '../../styles'
 
+import { Hero } from '../../components'
 import countdownLargeImage from '../../../assets/countdown/large.jpg'
 import CountDownItem from './CountDownItem'
 
 const WEDDING_DATE = new Date(2019, 7, 9, 15)
-console.log(WEDDING_DATE.toString())
-
-const Container = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-
-  color: white;
-  min-height: 600px;
-
-  background-image: url(${countdownLargeImage});
-  background-size: cover;
-  background-position: center;
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0.3;
-    background: #363636;
-  }
-`
-
-const ContentContainer = styled.div`
-  position: absolute;
-  width: 100%;
-`
 
 const Message = styled.h4`
   width: 100%;
@@ -71,10 +41,10 @@ const CountdownContainer = styled.div`
   display: flex;
   justify-content: space-around;
   margin: 16px auto 0 auto;
+  padding: 0 16px;
   max-width: 900px;
 `
-
-class Proposal extends Component {
+class Countdown extends Component {
   state = {
     monthsLeft: 0,
     daysLeft: 0,
@@ -117,20 +87,18 @@ class Proposal extends Component {
     const { monthsLeft, daysLeft, hoursLeft, minutesLeft, secondsLeft } = this.state
 
     return (
-      <Container name="countdown">
-        <ContentContainer>
-          <Message>Forever starts here</Message>
-          <CountdownContainer>
-            <CountDownItem label="Months">{monthsLeft}</CountDownItem>
-            <CountDownItem label="Days">{daysLeft}</CountDownItem>
-            <CountDownItem label="Hours">{hoursLeft}</CountDownItem>
-            <CountDownItem label="Minutes">{minutesLeft}</CountDownItem>
-            <CountDownItem label="Seconds">{secondsLeft}</CountDownItem>
-          </CountdownContainer>
-        </ContentContainer>
-      </Container>
+      <Hero name="countdown" image={countdownLargeImage}>
+        <Message>Forever starts here</Message>
+        <CountdownContainer>
+          <CountDownItem label="Months">{monthsLeft}</CountDownItem>
+          <CountDownItem label="Days">{daysLeft}</CountDownItem>
+          <CountDownItem label="Hours">{hoursLeft}</CountDownItem>
+          <CountDownItem label="Minutes">{minutesLeft}</CountDownItem>
+          <CountDownItem label="Seconds">{secondsLeft}</CountDownItem>
+        </CountdownContainer>
+      </Hero>
     )
   }
 }
 
-export default Proposal
+export default Countdown

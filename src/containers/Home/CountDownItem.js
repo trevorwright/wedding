@@ -21,6 +21,7 @@ const Count = styled.span`
 const Label = styled.span`
   font-weight: 300;
   font-size: 16px;
+  letter-spacing: initial;
 
   ${media.small`
     font-size: 20px;
