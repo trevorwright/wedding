@@ -40,7 +40,12 @@ const Media = () => (
     <SectionTitle>Media</SectionTitle>
     <Content>
       <MediaItem image={engagementVideoImage} title="Engagement Video" linkText="Watch video" />
-      <MediaItem image={engagementPhotosImage} title="Engagement Photos" linkText="View Gallery" />
+      <MediaItem
+        comingSoon
+        image={engagementPhotosImage}
+        title="Engagement Photos"
+        linkText="View Gallery"
+      />
     </Content>
   </Section>
 )
