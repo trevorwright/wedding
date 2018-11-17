@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { media } from '../../styles'
 import ourStoryImage from '../../../assets/story.jpg'
+import { SectionTitle } from '../../components'
 
 const Container = styled.section`
   display: flex;
@@ -55,22 +56,6 @@ const ContentContainer = styled.div`
   `};
 `
 
-const Title = styled.h3`
-  position: relative;
-  font-size: 28px;
-  margin-bottom: 32px;
-
-  &:after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    background: #363636;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-`
-
 const OurStory = styled.div`
   padding: 0 40px;
   text-align: left;
@@ -86,7 +71,7 @@ const OurStory = styled.div`
 
 const Story = () => (
   <Container name="story">
-    <Title>Our Story</Title>
+    <SectionTitle>Our Story</SectionTitle>
     <ContentContainer>
       <Image src={ourStoryImage} alt="" />
       <OurStory>
