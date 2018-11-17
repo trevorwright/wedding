@@ -4,6 +4,7 @@ import Hero from './Hero'
 import Story from './Story'
 import Countdown from './Countdown'
 import Media from './Media'
+import EventDetails from './EventDetails'
 
 export default () => (
   <div>
@@ -12,5 +13,6 @@ export default () => (
     <Story />
     <Countdown />
     <Media />
+    <EventDetails />
   </div>
 )

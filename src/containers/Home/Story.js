@@ -49,6 +49,7 @@ const ContentContainer = styled.div`
   align-items: center;
   max-width: 900px;
   margin: 0 auto;
+  font-size: 16px;
 
   ${media.medium`
     flex-direction: row;
