@@ -32,11 +32,11 @@ const ContentContainer = styled.div`
   `};
 `
 
-const Section = ({ children, title }) => (
-    <Container>
-      {title && <SectionTitle>{title}</SectionTitle>}
-      <ContentContainer>{children}</ContentContainer>
-    </Container>
-  )
+const Section = ({ children, title, ...rest }) => (
+  <Container {...rest}>
+    {title && <SectionTitle>{title}</SectionTitle>}
+    <ContentContainer>{children}</ContentContainer>
+  </Container>
+)
 
 export default Section
