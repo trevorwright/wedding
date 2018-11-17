@@ -12,8 +12,9 @@ const Title = styled.h2`
 `
 
 const Image = styled.img`
-  width: 350px;
   height: 225px;
+  max-width: 350px;
+  width: 100%;
   object-fit: cover;
   border-radius: 5px;
   box-shadow: 6px 6px 15px -6px rgba(0, 0, 0, 0.75);

@@ -39,7 +39,7 @@ const ImageContainer = styled.div`
   overflow: hidden;
   margin: 0 auto;
 
-  height: 175px;
+  height: 225px;
   max-width: 350px;
   border-radius: 5px;
   box-shadow: 6px 6px 15px -6px rgba(0, 0, 0, 0.75);
