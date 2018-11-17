@@ -3,6 +3,6 @@ export default [
   { text: 'Countdown', target: 'countdown' },
   { text: 'Media', target: 'media' },
   { text: 'Event', target: 'event' },
-  { text: 'Accommodations', target: 'accommodations' }
+  { text: 'Accommodations', target: 'hotel' }
   // { text: 'RSVP' },
 ]

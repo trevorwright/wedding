@@ -5,6 +5,8 @@ import Story from './Story'
 import Countdown from './Countdown'
 import Media from './Media'
 import EventDetails from './EventDetails'
+import Hotel from './Hotel'
+import Footer from './Footer'
 
 export default () => (
   <div>
@@ -14,5 +16,7 @@ export default () => (
     <Countdown />
     <Media />
     <EventDetails />
+    <Hotel />
+    <Footer />
   </div>
 )

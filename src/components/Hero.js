@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { media } from '../styles'
 
 const HeroContainer = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ const HeroContainer = styled.div`
 
   color: #fff;
 
-  height: ${props => props.height || '400px'};
+  height: ${props => props.height || '300px'};
   width: 100%;
   max-height: 1300px;
   background: url(${props => props.image});
@@ -28,6 +29,10 @@ const HeroContainer = styled.div`
     background: #000;
     opacity: 0.4;
   }
+
+  ${media.medium`
+    height: ${props => props.height || '400px'};
+  `};
 
   ${props => props.css};
 `
