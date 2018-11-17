@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { media } from '../styles'
 
 const Container = styled.div`
   > *:not(:last-child) {
@@ -18,6 +19,10 @@ const Image = styled.img`
   object-fit: cover;
   border-radius: 5px;
   box-shadow: 6px 6px 15px -6px rgba(0, 0, 0, 0.75);
+
+  ${media.small`
+    width: 350px;
+  `};
 `
 const Details = styled.div``
 
