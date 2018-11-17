@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { media } from '../../../styles'
 
+import engagementVideoImage from '../../../../assets/engagement-video-thumb.jpg'
+import engagementPhotosImage from '../../../../assets/engagement-photos-thumb.jpg'
 import { SectionTitle } from '../../../components'
 
 import MediaItem from './MediaItem'
@@ -37,8 +39,8 @@ const Media = () => (
   <Section name="media">
     <SectionTitle>Media</SectionTitle>
     <Content>
-      <MediaItem />
-      <MediaItem />
+      <MediaItem image={engagementVideoImage} title="Engagement Video" linkText="Watch video" />
+      <MediaItem image={engagementPhotosImage} title="Engagement Photos" linkText="View Gallery" />
     </Content>
   </Section>
 )

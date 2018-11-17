@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Title = styled.h3`
+const Title = styled.h2`
   position: relative;
   font-size: 28px;
   margin-bottom: 32px;
