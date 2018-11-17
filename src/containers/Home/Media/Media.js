@@ -35,11 +35,20 @@ const Content = styled.div`
   `}
 `
 
+const openEngagementVideo = () => {
+  window.open('https://www.youtube.com/watch?v=oAWdhTbytjI', '_blank')
+}
+
 const Media = () => (
   <Section name="media">
     <SectionTitle>Media</SectionTitle>
     <Content>
-      <MediaItem image={engagementVideoImage} title="Engagement Video" linkText="Watch video" />
+      <MediaItem
+        image={engagementVideoImage}
+        title="Engagement Video"
+        linkText="Watch video"
+        onClicked={openEngagementVideo}
+      />
       <MediaItem
         comingSoon
         image={engagementPhotosImage}

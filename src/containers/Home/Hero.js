@@ -30,7 +30,7 @@ const HeroContainer = styled.div`
     left: 0;
     right: 0;
     background: #000;
-    opacity: 0.6;
+    opacity: 0.4;
   }
 `
 

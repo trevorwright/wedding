@@ -18,7 +18,7 @@ const NavContainer = styled.nav`
   padding: 12px 16px;
 
   font-size: 18px;
-  font-weight: 200;
+  font-weight: 300;
 
   ${media.medium`
     font-size: 22px;

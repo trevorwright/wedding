@@ -1,7 +1,27 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-const Container = styled.div``
+const Container = styled.button`
+  padding: 16px;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+
+  > *:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  ${props =>
+    !props.comingSoon &&
+    css`
+      cursor: pointer;
+
+      &:hover {
+        border: 1px solid #dbdbdb;
+        border-radius: 5px;
+        box-shadow: 6px 6px 15px -6px rgba(0, 0, 0, 0.75);
+      }
+    `};
+`
 
 const Image = styled.img`
   height: 100%;
@@ -15,7 +35,7 @@ const Title = styled.h3`
 const ImageContainer = styled.div`
   position: relative;
   overflow: hidden;
-  margin: 0 auto 16px auto;
+  margin: 0 auto;
 
   height: 225px;
   width: 350px;
@@ -43,14 +63,13 @@ const ComingSoon = styled.h4`
   transform: translateY(-50%) translateX(-50%);
 `
 
-const MediaItem = ({ title, image, onLinkClicked, linkText, comingSoon }) => (
-  <Container>
+const MediaItem = ({ title, image, onClicked, comingSoon }) => (
+  <Container onClick={onClicked} comingSoon={comingSoon}>
     <ImageContainer comingSoon={comingSoon}>
       {comingSoon && <ComingSoon>Coming soon...</ComingSoon>}
       <Image src={image} />
     </ImageContainer>
     <Title>{title}</Title>
-    <button onClick={onLinkClicked}>{linkText}</button>
   </Container>
 )
 
