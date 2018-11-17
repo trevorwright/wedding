@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { media } from '../../../styles'
 
 const Container = styled.button`
   padding: 16px;
@@ -26,6 +27,7 @@ const Container = styled.button`
 const Image = styled.img`
   height: 100%;
   width: 100%;
+  object-fit: cover;
 `
 
 const Title = styled.h3`
@@ -37,8 +39,8 @@ const ImageContainer = styled.div`
   overflow: hidden;
   margin: 0 auto;
 
-  height: 225px;
-  width: 350px;
+  height: 175px;
+  max-width: 350px;
   border-radius: 5px;
   box-shadow: 6px 6px 15px -6px rgba(0, 0, 0, 0.75);
 
