@@ -102,11 +102,11 @@ class ImageGallery extends Component {
           <Lightbox
             enableZoom={false}
             mainSrc={this.imagePath(photoIndex)}
-            prevSrc={this.imagePath(this.getNextIndex(photoIndex))}
-            nextSrc={this.imagePath(this.getPrevIndex(photoIndex))}
+            nextSrc={this.imagePath(this.getNextIndex(photoIndex))}
+            prevSrc={this.imagePath(this.getPrevIndex(photoIndex))}
             onCloseRequest={() => this.setState({ lightBoxOpen: false })}
-            onMovePrevRequest={this.nextImage}
-            onMoveNextRequest={this.prevImage}
+            onMovePrevRequest={this.prevImage}
+            onMoveNextRequest={this.nextImage}
           />
         )}
       </Gallery>
