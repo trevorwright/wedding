@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-static'
 import { media } from '../../../styles'
 
 import engagementVideoImage from '../../../../assets/engagement-video-thumb.jpg'
@@ -35,26 +36,24 @@ const Content = styled.div`
   `}
 `
 
-const openEngagementVideo = () => {
-  window.open('https://www.youtube.com/watch?v=oAWdhTbytjI', '_blank')
-}
-
 const Media = () => (
   <Section name="media">
     <SectionTitle>Media</SectionTitle>
     <Content>
-      <MediaItem
-        image={engagementVideoImage}
-        title="Engagement Video"
-        linkText="Watch video"
-        onClicked={openEngagementVideo}
-      />
-      <MediaItem
-        comingSoon
-        image={engagementPhotosImage}
-        title="Engagement Photos"
-        linkText="View Gallery"
-      />
+      <a
+        href="https://www.youtube.com/watch?v=oAWdhTbytjI"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        <MediaItem image={engagementVideoImage} title="Engagement Video" linkText="Watch video" />
+      </a>
+      <Link to="/engagement-gallery">
+        <MediaItem
+          image={engagementPhotosImage}
+          title="Engagement Photos"
+          linkText="View Gallery"
+        />
+      </Link>
     </Content>
   </Section>
 )

@@ -5,6 +5,7 @@ import { injectGlobal, ThemeProvider } from 'styled-components'
 import { hot } from 'react-hot-loader'
 import Routes from 'react-static-routes'
 
+import 'react-image-lightbox/style.css'
 import globalCss from './styles/globalCss'
 import colors from './styles/colors'
 
