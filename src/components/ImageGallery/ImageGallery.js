@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
 import Lightbox from 'react-image-lightbox'
+
+import { media } from '../../styles'
 import Thumbnail from './Thumbnail'
 
 const Gallery = styled.div`
@@ -10,9 +12,32 @@ const Gallery = styled.div`
   margin: 0 auto;
 
   > * {
-    flex-basis: 25%;
-    max-width: 25%;
+    flex-basis: 100%;
+    max-width: 100%;
+    height: 250px;
   }
+
+  ${media.small`
+    > * {
+      flex-basis: 50%;
+      max-width: 50%;
+    }
+  `}
+
+  ${media.medium`
+    > * {
+      flex-basis: 33.3%;
+      max-width: 33.3%;
+      height: 300px;
+    }
+  `}
+
+  ${media.large`
+    > * {
+      flex-basis: 25%;
+      max-width: 25%;
+    }
+  `}
 `
 
 class ImageGallery extends Component {
