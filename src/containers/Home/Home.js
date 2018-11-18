@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from './Nav'
+import { NavigationBar } from '../../components'
 import Hero from './Hero'
 import Story from './Story'
 import Countdown from './Countdown'
@@ -10,7 +10,7 @@ import Footer from './Footer'
 
 export default () => (
   <div>
-    <Nav />
+    <NavigationBar />
     <Hero />
     <Story />
     <Countdown />
