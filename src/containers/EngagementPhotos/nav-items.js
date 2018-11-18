@@ -1,1 +1,1 @@
-export default [{ text: 'Event Details', target: 'home' }]
+export default [{ text: 'Home', destination: '/' }]

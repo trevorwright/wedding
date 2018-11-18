@@ -1,11 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import * as Scroll from 'react-scroll'
 import { media } from '../../../styles'
 
+import NavLink from '../NavLink'
 import NavLogo from '../NavLogo'
-
-const NAV_HEIGHT = 60
 
 const NavContainer = styled.nav`
   position: fixed;
@@ -16,11 +14,10 @@ const NavContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 12px 16px;
-  height: ${NAV_HEIGHT}px;
+  height: 60px;
 
   font-size: 18px;
   font-weight: 300;
-  color: #fff;
   background: rgba(0, 0, 0, 0.4);
 
   ${media.medium`
@@ -30,6 +27,11 @@ const NavContainer = styled.nav`
   ${media.smallDown`
     display: none;
   `};
+
+  a {
+    text-decoration: none;
+    color: #fff;
+  }
 `
 
 const NavItems = styled.ul`
@@ -62,16 +64,15 @@ const NavItem = styled.li`
     }
   }
 `
+
 const Nav = ({ items }) => (
   <header>
     <NavContainer>
       <NavLogo />
       <NavItems>
-        {items.map(({ text, target }) => (
+        {items.map(({ text, destination }) => (
           <NavItem key={text}>
-            <Scroll.Link to={target} offset={-NAV_HEIGHT} smooth duration={500}>
-              {text}
-            </Scroll.Link>
+            <NavLink destination={destination}>{text}</NavLink>
           </NavItem>
         ))}
       </NavItems>

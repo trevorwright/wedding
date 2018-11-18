@@ -1,8 +1,8 @@
 export default [
-  { text: 'Story', target: 'story' },
-  { text: 'Countdown', target: 'countdown' },
-  { text: 'Media', target: 'media' },
-  { text: 'Event', target: 'event' },
-  { text: 'Accommodations', target: 'hotel' }
+  { text: 'Story', destination: '#story' },
+  { text: 'Countdown', destination: '#countdown' },
+  { text: 'Media', destination: '#media' },
+  { text: 'Event', destination: '#event' },
+  { text: 'Accommodations', destination: '#hotel' }
   // { text: 'RSVP' }
 ]

@@ -65,8 +65,8 @@ const ComingSoon = styled.h4`
   transform: translateY(-50%) translateX(-50%);
 `
 
-const MediaItem = ({ title, image, onClicked, comingSoon }) => (
-  <Container onClick={onClicked} comingSoon={comingSoon}>
+const MediaItem = ({ title, image, comingSoon }) => (
+  <Container comingSoon={comingSoon}>
     <ImageContainer comingSoon={comingSoon}>
       {comingSoon && <ComingSoon>Coming soon...</ComingSoon>}
       <Image src={image} />

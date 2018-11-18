@@ -3,8 +3,8 @@ import styled, { css } from 'styled-components'
 import { lighten } from 'polished'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
-import * as Scroll from 'react-scroll'
 import { media } from '../../../styles'
+import NavLink from '../NavLink'
 
 const Drawer = styled.nav`
   position: fixed;
@@ -84,11 +84,11 @@ const NavDrawer = ({ onClose, open, items }) => (
       Menu
     </Header>
     <MenuItems>
-      {items.map(({ text, target }) => (
+      {items.map(({ text, destination }) => (
         <MenuItem key={text}>
-          <Scroll.Link to={target} smooth duration={500} onClick={onClose}>
+          <NavLink destination={destination} onClick={onClose}>
             {text}
-          </Scroll.Link>
+          </NavLink>
         </MenuItem>
       ))}
     </MenuItems>
