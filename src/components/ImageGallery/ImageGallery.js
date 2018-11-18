@@ -1,8 +1,13 @@
 import React from 'react'
+import styled from 'styled-components'
 
-const ImageGallery = () => (
+const Image = styled.img``
+
+const ImageGallery = ({ path, ids = [], fileExtension = 'jpg' }) => (
   <div>
-    <div>Image Gallery</div>
+    {ids.map(id => (
+      <Image src={`${path}/thumbnails/${id}.${fileExtension}`} />
+    ))}
   </div>
 )
 
