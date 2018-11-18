@@ -15,8 +15,8 @@ const Image = styled.img`
   }
 `
 
-const Thumbnail = ({ id, path, fileExtension, onClick }) => (
-  <Image src={`${path}/thumbnails/${id}.${fileExtension}`} onClick={onClick} />
+const Thumbnail = ({ id, index, path, fileExtension, onClick }) => (
+  <Image src={`${path}/thumbnails/${id}.${fileExtension}`} onClick={() => onClick(index)} />
 )
 
 export default Thumbnail

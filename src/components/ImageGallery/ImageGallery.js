@@ -49,22 +49,24 @@ class ImageGallery extends Component {
     }))
   }
 
-  openLightBox = () => {
-    this.setState({ lightBoxOpen: true })
+  openLightBox = id => {
+    this.setState({ photoIndex: id, lightBoxOpen: true })
   }
 
   render() {
     const { path, ids = [], fileExtension = 'jpg' } = this.props
     const { lightBoxOpen, photoIndex } = this.state
+
     return (
       <Gallery>
-        {ids.map(id => (
+        {ids.map((id, index) => (
           <Thumbnail
             key={id}
             id={id}
+            index={index}
             path={path}
             fileExtension={fileExtension}
-            onClick={this.openLightBox}
+            onClick={id => this.openLightBox(id)}
           />
         ))}
         {lightBoxOpen && (
