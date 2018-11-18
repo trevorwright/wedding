@@ -1,9 +1,13 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Lightbox from 'react-image-lightbox'
 
 import { media } from '../../styles'
 import Thumbnail from './Thumbnail'
+
+let Lightbox = () => null
+if (typeof document !== 'undefined') {
+  Lightbox = require('react-image-lightbox').default
+}
 
 const Gallery = styled.div`
   display: flex;
