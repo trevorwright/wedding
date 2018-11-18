@@ -1,5 +1,5 @@
 import React from 'react'
-import Nav from './Nav'
+import { NavigationBar } from '../../components'
 import Hero from './Hero'
 import Story from './Story'
 import Countdown from './Countdown'
@@ -8,9 +8,11 @@ import EventDetails from './EventDetails'
 import Hotel from './Hotel'
 import Footer from './Footer'
 
+import navItems from './nav-items'
+
 export default () => (
   <div>
-    <Nav />
+    <NavigationBar items={navItems} />
     <Hero />
     <Story />
     <Countdown />
