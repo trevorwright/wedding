@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Image = styled.img`
-  width: 300px;
+  width: 100%;
   height: 300px;
   padding: 2px;
   object-fit: cover;
@@ -15,8 +15,8 @@ const Image = styled.img`
   }
 `
 
-const Thumbnail = ({ id, path, fileExtension }) => (
-  <Image src={`${path}/thumbnails/${id}.${fileExtension}`} />
+const Thumbnail = ({ id, path, fileExtension, onClick }) => (
+  <Image src={`${path}/thumbnails/${id}.${fileExtension}`} onClick={onClick} />
 )
 
 export default Thumbnail
