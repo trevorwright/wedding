@@ -1,14 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
+import Thumbnail from './Thumbnail'
 
-const Image = styled.img``
+const Gallery = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+
+  > * {
+    flex-basis: 25%;
+  }
+`
 
 const ImageGallery = ({ path, ids = [], fileExtension = 'jpg' }) => (
-  <div>
+  <Gallery>
     {ids.map(id => (
-      <Image src={`${path}/thumbnails/${id}.${fileExtension}`} />
+      <Thumbnail key={id} id={id} path={path} fileExtension={fileExtension} />
     ))}
-  </div>
+  </Gallery>
 )
 
 export default ImageGallery
