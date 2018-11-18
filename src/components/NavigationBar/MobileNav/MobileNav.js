@@ -57,7 +57,11 @@ class MobileNav extends Component {
             <FontAwesomeIcon icon={faBars} size="lg" style={{ marginBottom: '4px' }} />
           </MenuButton>
         </NavHeader>
-        <NavDrawer open={this.state.drawerOpen} onClose={this.toggleDrawer} />
+        <NavDrawer
+          open={this.state.drawerOpen}
+          onClose={this.toggleDrawer}
+          items={this.props.items}
+        />
       </Fragment>
     )
   }

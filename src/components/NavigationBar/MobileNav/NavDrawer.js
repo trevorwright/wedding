@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import * as Scroll from 'react-scroll'
 import { media } from '../../../styles'
-import navItems from '../nav-items'
 
 const Drawer = styled.nav`
   position: fixed;
@@ -76,7 +75,7 @@ const MenuItem = styled.li`
   }
 `
 
-const NavDrawer = ({ onClose, open }) => (
+const NavDrawer = ({ onClose, open, items }) => (
   <Drawer open={open}>
     <Header>
       <CloseButton onClick={onClose}>
@@ -85,7 +84,7 @@ const NavDrawer = ({ onClose, open }) => (
       Menu
     </Header>
     <MenuItems>
-      {navItems.map(({ text, target }) => (
+      {items.map(({ text, target }) => (
         <MenuItem key={text}>
           <Scroll.Link to={target} smooth duration={500} onClick={onClose}>
             {text}

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import * as Scroll from 'react-scroll'
 import { media } from '../../../styles'
-import navItems from '../nav-items'
 
 import NavLogo from '../NavLogo'
 
@@ -63,12 +62,12 @@ const NavItem = styled.li`
     }
   }
 `
-const Nav = () => (
+const Nav = ({ items }) => (
   <header>
     <NavContainer>
       <NavLogo />
       <NavItems>
-        {navItems.map(({ text, target }) => (
+        {items.map(({ text, target }) => (
           <NavItem key={text}>
             <Scroll.Link to={target} offset={-NAV_HEIGHT} smooth duration={500}>
               {text}

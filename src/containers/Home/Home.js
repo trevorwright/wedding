@@ -8,9 +8,11 @@ import EventDetails from './EventDetails'
 import Hotel from './Hotel'
 import Footer from './Footer'
 
+import navItems from './nav-items'
+
 export default () => (
   <div>
-    <NavigationBar />
+    <NavigationBar items={navItems} />
     <Hero />
     <Story />
     <Countdown />

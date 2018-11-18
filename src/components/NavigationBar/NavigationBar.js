@@ -2,10 +2,10 @@ import React, { Fragment } from 'react'
 import DesktopNav from './DesktopNav/DesktopNav'
 import MobileNav from './MobileNav/MobileNav'
 
-const Nav = () => (
+const Nav = ({ items }) => (
   <Fragment>
-    <DesktopNav />
-    <MobileNav />
+    <DesktopNav items={items} />
+    <MobileNav items={items} />
   </Fragment>
 )
 

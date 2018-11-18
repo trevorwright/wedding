@@ -4,5 +4,5 @@ export default [
   { text: 'Media', target: 'media' },
   { text: 'Event', target: 'event' },
   { text: 'Accommodations', target: 'hotel' }
-  // { text: 'RSVP' },
+  // { text: 'RSVP' }
 ]
