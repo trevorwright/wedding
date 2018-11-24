@@ -14,6 +14,10 @@ const NoBreak = styled.span`
   white-space: nowrap;
 `
 
+const Bold = styled.span`
+  font-weight: 500;
+`
+
 const getDirections = () => {
   window.open(DIRECTIONS_LINK, '_blank')
 }
@@ -24,6 +28,9 @@ const Details = () => (
       Our ceremony and cocktail hour will be held at Gracewood Estates, Kurtz Orchards. Dinner and
       dancing will follow at Kurtz Orchards Market. Transportation from cocktail hour to the
       <NoBreak> reception will be provided.</NoBreak>
+    </p>
+    <p>
+      Please note that our special day will be <Bold>taking places outdoors</Bold>!
     </p>
     <p>
       We can't wait to celebrate and dance the <NoBreak>night away with you!</NoBreak>
