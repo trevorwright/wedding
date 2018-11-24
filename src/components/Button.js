@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const StyledButton = styled.button`
   font-size: 16px;
-  border: 1px solid #5a5a5a;
+  border: 1px solid #999999;
   border-radius: 5px;
   padding: 4px 8px 2px 8px;
   background: white;
@@ -12,7 +12,7 @@ const StyledButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background: #dbdbdb;
+    background: #eeeeee;
   }
 `
 

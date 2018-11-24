@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { media } from '../../../styles'
-import { Section, Hero, ImageDetails } from '../../../components'
+import { Section, Hero, ImageDetails, Button } from '../../../components'
 
 import hotelImage from '../../../../assets/hotel.jpg'
 import hotelRoomImage from '../../../../assets/hotel-room.jpg'
@@ -44,6 +44,10 @@ const Bold = styled.span`
   font-weight: 500;
 `
 
+const getDirections = () => {
+  window.open(HOTEL_DIRECTIONS, '_blank')
+}
+
 const Hotel = () => (
   <div name="hotel">
     <Hero image={hotelImage}>Accommodations & Transportation</Hero>
@@ -60,7 +64,7 @@ const Hotel = () => (
             shuttle to and from the venue. We recommend booking as soon as possible as{' '}
             <Bold>space is limited</Bold>. We also suggest requesting early check-in when you call.
           </p>
-          <a href={HOTEL_DIRECTIONS}>Directions to hotel</a>
+          <Button onClick={getDirections}>Get directions</Button>
         </Details>
       </HotelLayout>
     </Section>
