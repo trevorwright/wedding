@@ -56,7 +56,7 @@ const Hotel = () => (
         <ImageDetails title="Hotel" image={hotelRoomImage}>
           <p>Holiday Inn & Suites</p>
           <p>327 Ontario Street, St. Catharines</p>
-          <p>1 (877) 660-8550</p>
+          <p>905-688-2324</p>
         </ImageDetails>
         <Details>
           <p>
