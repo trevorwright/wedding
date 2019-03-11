@@ -20,15 +20,19 @@ const Count = styled.span`
 
 const Label = styled.span`
   font-weight: 300;
-  font-size: 16px;
+  font-size: 10px;
   letter-spacing: initial;
 
+  ${media.break(400)`
+    font-size: 12px;
+  `}
+
   ${media.small`
-    font-size: 20px;
+    font-size: 18px;
   `};
 
   ${media.medium`
-    font-size: 28px;
+    font-size: 26px;
   `};
 `
 
