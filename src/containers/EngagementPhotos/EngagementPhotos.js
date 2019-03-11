@@ -29,7 +29,9 @@ const EngagementPhotos = () => (
     <NavigationBar items={navItems} />
     <Hero image={photographyImage}>
       Engagement Photos
-      <PhotoCredits href="google.ca">Katie Stewart Photography</PhotoCredits>
+      <PhotoCredits href="http://www.katiestewartphotography.com/">
+        Katie Stewart Photography
+      </PhotoCredits>
     </Hero>
     <ImageGallery path="/engagement-photos" ids={photoIds} />
   </main>
