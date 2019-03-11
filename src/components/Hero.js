@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { media } from '../styles'
 
 const HeroContainer = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
