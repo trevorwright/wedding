@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { media } from '../../../styles'
+import { media, hoverUnderline } from '../../../styles'
 
 import NavLink from '../NavLink'
 import NavLogo from '../NavLogo'
@@ -46,23 +46,7 @@ const NavItem = styled.li`
     margin-left: 32px;
   `};
 
-  &:after {
-    content: '';
-    position: absolute;
-    height: 1px;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    background: #fff;
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-  }
-
-  &:hover {
-    &:after {
-      transform: scaleX(1);
-    }
-  }
+  ${hoverUnderline('white')};
 `
 
 const Nav = ({ items }) => (
