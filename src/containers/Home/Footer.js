@@ -46,7 +46,7 @@ const NoBreak = styled.span`
 
 const Footer = () => (
   <Container>
-    <Link href="trevorwright.ca">
+    <Link href="https://trevorwright.dev">
       Designed & Developed by <NoBreak>Trevor Wright</NoBreak>
     </Link>
   </Container>
