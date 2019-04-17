@@ -16,6 +16,8 @@ const Container = styled.section`
   ${media.medium`
     padding: 80px 40px;
   `};
+
+  ${props => props.css};
 `
 
 const ContentContainer = styled.div`
