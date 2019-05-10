@@ -129,7 +129,7 @@ class rsvp extends Component {
     } = this.state
     const formErrors = {}
 
-    if (!nameOne.trim() || nameOne.length < 5) {
+    if (!nameOne.trim()) {
       formErrors.nameOne = 'Guest one must have a full name provided'
     }
 
@@ -138,7 +138,7 @@ class rsvp extends Component {
     }
 
     if (secondGuest) {
-      if (!nameTwo.trim() || nameTwo.length < 5) {
+      if (!nameTwo.trim()) {
         formErrors.nameTwo = 'Guest two must have a full name provided'
       }
 
