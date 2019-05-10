@@ -41,6 +41,12 @@ export default {
               href="https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700"
               rel="stylesheet"
             />
+            <link
+              rel="stylesheet"
+              href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+              integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+              crossOrigin="anonymous"
+            />
             <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
             <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
             <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png" />
