@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
 import { size, map, uniqueId, filter } from 'lodash'
 import Cookies from 'js-cookie'
+import { scroller } from 'react-scroll'
 import Guest from './Guest'
 import Additional from './Additional'
 import AddGuest from './AddGuest'
@@ -146,7 +147,7 @@ class rsvp extends Component {
       }
     }
 
-    if (!this.validateEmail(email)) {
+    if (!this.validateEmail(email.trim())) {
       formErrors.email = 'A valid email address we can contact you at'
     }
 
@@ -186,6 +187,7 @@ class rsvp extends Component {
         .then(() => {
           Cookies.set('rsvp', state.nameOne, { expires: 7 })
           this.setState({ submitted: true })
+          scroller.scrollTo('rsvp', { offset: -60, smooth: true, duration: 500 })
         })
         .catch(() => console.error('An error occured'))
     }
