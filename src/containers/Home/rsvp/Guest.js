@@ -82,7 +82,6 @@ const Guest = ({
       </Label>
       <RadioLabel>
         <RadioInput
-          type="radio"
           name={`meal${id}`}
           value="chicken"
           onChange={onMealChanged}
@@ -92,7 +91,6 @@ const Guest = ({
       </RadioLabel>
       <RadioLabel>
         <RadioInput
-          type="radio"
           name={`meal${id}`}
           value="beef"
           onChange={onMealChanged}
@@ -102,7 +100,6 @@ const Guest = ({
       </RadioLabel>
       <RadioLabel>
         <RadioInput
-          type="radio"
           name={`meal${id}`}
           value="vegetarian"
           onChange={onMealChanged}

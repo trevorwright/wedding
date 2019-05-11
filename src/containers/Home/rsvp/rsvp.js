@@ -1,12 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-for */
 /* eslint-disable no-useless-escape */
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import styled, { css } from 'styled-components'
 import { size, map, uniqueId, filter } from 'lodash'
 import Cookies from 'js-cookie'
 import { scroller } from 'react-scroll'
+import Attendance from './Attendance'
 import Guest from './Guest'
 import Additional from './Additional'
+import Decline from './Decline'
 import AddGuest from './AddGuest'
 import ErrorIcon from './ErrorIcon'
 import SubmissionComplete from './SubmissionComplete'
@@ -66,6 +68,7 @@ const ErrorMessage = styled.li``
 
 class rsvp extends Component {
   state = {
+    attending: 'no',
     nameOne: '',
     mealOne: '',
     secondGuest: false,
@@ -110,6 +113,10 @@ class rsvp extends Component {
 
   onCommentsChanged = event => {
     this.setState({ comments: event.target.value })
+  }
+
+  onAttendingChanged = event => {
+    this.setState({ attending: event.target.value })
   }
 
   validateEmail = email => {
@@ -211,6 +218,7 @@ class rsvp extends Component {
 
   render() {
     const {
+      attending,
       nameOne,
       mealOne,
       nameTwo,
@@ -234,41 +242,56 @@ class rsvp extends Component {
               <input type="hidden" name="nameTwo" />
               <input type="hidden" name="mealTwo" />
               <input type="hidden" name="comments" />
-              <Guest
-                id="One"
-                meal={mealOne}
-                onMealChanged={event => this.onMealChanged('One', event)}
-                name={nameOne}
-                onNameChanged={event => this.onNameChanged('One', event)}
-                nameError={!!errors.nameOne}
-                mealError={!!errors.mealOne}
-              />
-              {secondGuest ? (
-                <Guest
-                  id="Two"
-                  meal={mealTwo}
-                  onMealChanged={event => this.onMealChanged('Two', event)}
-                  name={nameTwo}
-                  onNameChanged={event => this.onNameChanged('Two', event)}
-                  removable
-                  onRemove={() => this.setSecondGuest(false)}
-                  nameError={!!errors.nameTwo}
-                  mealError={!!errors.mealTwo}
-                />
-              ) : (
-                <AddGuest onClick={() => this.setSecondGuest(true)} />
-              )}
+              <Attendance value={attending} onChange={this.onAttendingChanged} />
               <Divider />
-              <Additional
-                email={email}
-                onEmailChanged={this.onEmailChanged}
-                booked={bookedHotel}
-                onBookedChanged={this.onHotelBookedChanged}
-                comments={comments}
-                onCommentsChanged={this.onCommentsChanged}
-                emailError={!!errors.email}
-                bookedError={!!errors.bookedHotel}
-              />
+              {attending === 'yes' ? (
+                <Fragment>
+                  <Guest
+                    id="One"
+                    meal={mealOne}
+                    onMealChanged={event => this.onMealChanged('One', event)}
+                    name={nameOne}
+                    onNameChanged={event => this.onNameChanged('One', event)}
+                    nameError={!!errors.nameOne}
+                    mealError={!!errors.mealOne}
+                  />
+                  {secondGuest ? (
+                    <Guest
+                      id="Two"
+                      meal={mealTwo}
+                      onMealChanged={event => this.onMealChanged('Two', event)}
+                      name={nameTwo}
+                      onNameChanged={event => this.onNameChanged('Two', event)}
+                      removable
+                      onRemove={() => this.setSecondGuest(false)}
+                      nameError={!!errors.nameTwo}
+                      mealError={!!errors.mealTwo}
+                    />
+                  ) : (
+                    <AddGuest onClick={() => this.setSecondGuest(true)} />
+                  )}
+                  <Divider />
+                  <Additional
+                    email={email}
+                    onEmailChanged={this.onEmailChanged}
+                    booked={bookedHotel}
+                    onBookedChanged={this.onHotelBookedChanged}
+                    comments={comments}
+                    onCommentsChanged={this.onCommentsChanged}
+                    emailError={!!errors.email}
+                    bookedError={!!errors.bookedHotel}
+                  />
+                </Fragment>
+              ) : (
+                <Decline
+                  name={nameOne}
+                  onNameChanged={event => this.onNameChanged('One', event)}
+                  email={email}
+                  onEmailChanged={this.onEmailChanged}
+                  comments={comments}
+                  onCommentsChanged={this.onCommentsChanged}
+                />
+              )}
               {this.renderErrors()}
               <SubmitButton type="submit">Send RSVP</SubmitButton>
             </Form>

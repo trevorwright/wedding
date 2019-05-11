@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Header from './Header'
 import Label from './Label'
 import Input from './Input'
+import TextArea from './TextArea'
 import { RadioLabel, RadioInput } from './Radio'
 import ErrorIcon from './ErrorIcon'
 import { media } from '../../../styles'
@@ -45,21 +46,6 @@ const CommentLabel = styled(Label)`
   grid-column: 1 / span 2;
 `
 
-const AdditionalInformation = styled.textarea`
-  padding: 4px 8px;
-  font-size: 14px;
-  border: 1px solid #b7b7b7;
-  border-radius: 5px;
-  outline: none;
-  font-weight: 300;
-  min-height: 75px;
-  line-height: 1.5;
-
-  &:focus {
-    border-color: #496a0f;
-  }
-`
-
 const Additional = ({
   email,
   onEmailChanged,
@@ -88,7 +74,6 @@ const Additional = ({
       </Label>
       <RadioLabel>
         <RadioInput
-          type="radio"
           name="bookedHotel"
           value="Yes"
           onChange={onBookedChanged}
@@ -98,7 +83,6 @@ const Additional = ({
       </RadioLabel>
       <RadioLabel>
         <RadioInput
-          type="radio"
           name="bookedHotel"
           value="No"
           onChange={onBookedChanged}
@@ -109,7 +93,7 @@ const Additional = ({
     </HotelRadioGroup>
     <CommentLabel>
       Additional comments
-      <AdditionalInformation name="comments" value={comments} onChange={onCommentsChanged} />
+      <TextArea name="comments" value={comments} onChange={onCommentsChanged} />
     </CommentLabel>
   </Layout>
 )
