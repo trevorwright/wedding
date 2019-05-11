@@ -12,12 +12,18 @@ const Container = styled.div`
 `
 
 const SubmissionComplete = () => {
-  const name = Cookies.get('rsvp')
+  const rsvp = Cookies.get('rsvp')
 
   return (
     <Container>
-      <div>Thank you for your RSVP{!!name && ` ${name}`}!</div>
-      <div>Feel free to reach out at rsvp@wrighttogether.ca</div>
+      {rsvp === 'attending' ? (
+        <div>Thank you for your RSVP, we look forward to celebrating this day with you!</div>
+      ) : (
+        <div>We are sorry you will not be able to attend, you will be missed.</div>
+      )}
+      <div>
+        Feel free to reach out at <a href="rsvp@wrighttogether.ca">rsvp@wrighttogether.ca</a>
+      </div>
     </Container>
   )
 }

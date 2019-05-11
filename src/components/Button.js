@@ -14,6 +14,12 @@ const StyledButton = styled.button`
   &:hover {
     background: #eeeeee;
   }
+
+  &:disabled {
+    background: white;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 `
 
 const Button = ({ children, ...rest }) => <StyledButton {...rest}>{children}</StyledButton>
