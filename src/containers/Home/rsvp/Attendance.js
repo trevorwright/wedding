@@ -19,17 +19,17 @@ const Container = styled.div`
 `
 
 const Attendance = ({ value, onChange }) => (
-    <Container>
-      <Header>Attendance</Header>
-      <RadioLabel>
-        <RadioInput name="attendance" value="yes" onChange={onChange} checked={value === 'yes'} />
-        Accepts with pleasure
-      </RadioLabel>
-      <RadioLabel>
-        <RadioInput name="attendance" value="no" onChange={onChange} checked={value === 'no'} />
-        Declines with regrets
-      </RadioLabel>
-    </Container>
-  )
+  <Container>
+    <Header>Attendance</Header>
+    <RadioLabel>
+      <RadioInput name="attending" value="yes" onChange={onChange} checked={value === 'yes'} />
+      Accepts with pleasure
+    </RadioLabel>
+    <RadioLabel>
+      <RadioInput name="attending" value="no" onChange={onChange} checked={value === 'no'} />
+      Declines with regrets
+    </RadioLabel>
+  </Container>
+)
 
 export default Attendance

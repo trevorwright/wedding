@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Label from './Label'
 import Input from './Input'
 import TextArea from './TextArea'
+import ErrorIcon from './ErrorIcon'
 import { media } from '../../../styles'
 
 const Container = styled.div`
@@ -20,14 +21,29 @@ const Container = styled.div`
   `};
 `
 
-const Decline = ({ name, email, comments, onNameChanged, onEmailChanged, onCommentsChanged }) => (
+const Decline = ({
+  name,
+  email,
+  comments,
+  onNameChanged,
+  onEmailChanged,
+  onCommentsChanged,
+  nameError,
+  emailError
+}) => (
   <Container>
     <Label>
-      Name
+      <div>
+        {nameError && <ErrorIcon />}
+        Name
+      </div>
       <Input name="nameOne" value={name} onChange={onNameChanged} />
     </Label>
     <Label>
-      Email
+      <div>
+        {emailError && <ErrorIcon />}
+        Email
+      </div>
       <Input name="email" value={email} onChange={onEmailChanged} />
     </Label>
     <Label className="comments">

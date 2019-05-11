@@ -116,7 +116,7 @@ class rsvp extends Component {
   }
 
   onAttendingChanged = event => {
-    this.setState({ attending: event.target.value })
+    this.setState({ attending: event.target.value, errors: {} })
   }
 
   validateEmail = email => {
@@ -126,6 +126,7 @@ class rsvp extends Component {
 
   validateForm = () => {
     const {
+      attending,
       nameOne = '',
       mealOne = '',
       nameTwo = '',
@@ -136,30 +137,40 @@ class rsvp extends Component {
     } = this.state
     const formErrors = {}
 
-    if (!nameOne.trim()) {
-      formErrors.nameOne = 'Guest one must have a full name provided'
-    }
-
-    if (!mealOne.trim()) {
-      formErrors.mealOne = 'Guest one must select a meal'
-    }
-
-    if (secondGuest) {
-      if (!nameTwo.trim()) {
-        formErrors.nameTwo = 'Guest two must have a full name provided'
+    if (attending === 'yes') {
+      if (!nameOne.trim()) {
+        formErrors.nameOne = 'Guest one must have a full name provided'
       }
 
-      if (!mealTwo.trim()) {
-        formErrors.mealTwo = 'Guest two must select a meal'
+      if (!mealOne.trim()) {
+        formErrors.mealOne = 'Guest one must select a meal'
       }
-    }
 
-    if (!this.validateEmail(email.trim())) {
-      formErrors.email = 'A valid email address we can contact you at'
-    }
+      if (secondGuest) {
+        if (!nameTwo.trim()) {
+          formErrors.nameTwo = 'Guest two must have a full name provided'
+        }
 
-    if (!bookedHotel.trim()) {
-      formErrors.bookedHotel = 'Let us known if you booked at the Holiday Inn'
+        if (!mealTwo.trim()) {
+          formErrors.mealTwo = 'Guest two must select a meal'
+        }
+      }
+
+      if (!this.validateEmail(email.trim())) {
+        formErrors.email = 'Provide a valid email address we can contact you at'
+      }
+
+      if (!bookedHotel.trim()) {
+        formErrors.bookedHotel = 'Let us known if you booked at the Holiday Inn'
+      }
+    } else {
+      if (!nameOne.trim()) {
+        formErrors.nameOne = 'Please leave us your name'
+      }
+
+      if (!this.validateEmail(email.trim())) {
+        formErrors.email = 'Provide a valid email address we can contact you at'
+      }
     }
 
     this.setState({ errors: formErrors })
@@ -170,20 +181,33 @@ class rsvp extends Component {
   submitForm = event => {
     event.preventDefault()
     const isValid = this.validateForm()
+    let submissionData = {}
+
     if (isValid) {
       const state = this.state
-      const submissionData = {
-        nameOne: state.nameOne,
-        mealOne: state.mealOne,
-        email: state.email,
-        bookedHotel: state.bookedHotel,
-        additional: state.comments,
-        comments: state.comments.trim() || `${state.nameOne} has RSVP'd!`
-      }
 
-      if (state.secondGuest) {
-        submissionData.nameTwo = state.nameTwo
-        submissionData.mealTwo = state.mealTwo
+      if (state.attending === 'yes') {
+        submissionData = {
+          attending: 'YES',
+          nameOne: state.nameOne,
+          mealOne: state.mealOne,
+          email: state.email,
+          bookedHotel: state.bookedHotel,
+          additional: state.comments,
+          comments: state.comments.trim() || `${state.nameOne} has RSVP'd!`
+        }
+
+        if (state.secondGuest) {
+          submissionData.nameTwo = state.nameTwo
+          submissionData.mealTwo = state.mealTwo
+        }
+      } else {
+        submissionData = {
+          attending: 'NOT ATTENDING',
+          nameOne: state.nameOne,
+          email: state.email,
+          comments: state.comments.trim()
+        }
       }
 
       fetch('/', {
@@ -196,7 +220,7 @@ class rsvp extends Component {
           this.setState({ submitted: true })
           scroller.scrollTo('rsvp', { offset: -60, smooth: true, duration: 500 })
         })
-        .catch(() => console.error('An error occured'))
+        .catch(() => console.error('An error occurred'))
     }
   }
 
@@ -286,7 +310,9 @@ class rsvp extends Component {
                 <Decline
                   name={nameOne}
                   onNameChanged={event => this.onNameChanged('One', event)}
+                  nameError={!!errors.nameOne}
                   email={email}
+                  emailError={!!errors.email}
                   onEmailChanged={this.onEmailChanged}
                   comments={comments}
                   onCommentsChanged={this.onCommentsChanged}
