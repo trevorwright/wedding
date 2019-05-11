@@ -1,8 +1,7 @@
 export default [
+  { text: 'RSVP', destination: '#rsvp' },
   { text: 'Story', destination: '#story' },
   { text: 'Countdown', destination: '#countdown' },
   { text: 'Media', destination: '#media' },
-  { text: 'Event', destination: '#event' },
-  { text: 'Accommodations', destination: '#hotel' }
-  // { text: 'RSVP' }
+  { text: 'Event', destination: '#event' }
 ]
