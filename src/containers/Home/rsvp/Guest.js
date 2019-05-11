@@ -87,7 +87,7 @@ const Guest = ({
           onChange={onMealChanged}
           checked={meal === 'chicken'}
         />
-        Chicken
+        Rustic roasted chicken
       </RadioLabel>
       <RadioLabel>
         <RadioInput
@@ -96,7 +96,7 @@ const Guest = ({
           onChange={onMealChanged}
           checked={meal === 'beef'}
         />
-        Beef
+        Braised short ribs
       </RadioLabel>
       <RadioLabel>
         <RadioInput
@@ -105,7 +105,7 @@ const Guest = ({
           onChange={onMealChanged}
           checked={meal === 'vegetarian'}
         />
-        Vegetarian
+        Vegetarian option
       </RadioLabel>
     </FoodRadioGroup>
   </Container>

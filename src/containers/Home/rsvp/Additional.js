@@ -69,7 +69,7 @@ const Additional = ({
       <Label>
         <div>
           {bookedError && <ErrorIcon />}
-          Holiday Inn Reservation
+          Do you have a Holiday Inn reservation
         </div>
       </Label>
       <RadioLabel>
