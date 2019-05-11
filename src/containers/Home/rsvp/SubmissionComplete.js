@@ -19,7 +19,7 @@ const SubmissionComplete = () => {
       {rsvp === 'attending' ? (
         <div>Thank you for your RSVP, we look forward to celebrating this day with you!</div>
       ) : (
-        <div>We are sorry you will not be able to attend, you will be missed.</div>
+        <div>We are sorry you will not be able to attend. You will be missed.</div>
       )}
       <div>
         Feel free to reach out at <a href="rsvp@wrighttogether.ca">rsvp@wrighttogether.ca</a>
