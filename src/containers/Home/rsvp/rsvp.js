@@ -225,7 +225,7 @@ class rsvp extends Component {
         body: encode({ 'form-name': 'rsvp', ...submissionData })
       })
         .then(() => {
-          if (state.attending) {
+          if (state.attending === 'yes') {
             Cookies.set('rsvp', 'attending', { expires: 30 })
           } else {
             Cookies.set('rsvp', 'not-attending', { expires: 30 })
