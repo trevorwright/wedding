@@ -13,6 +13,7 @@ import AddGuest from './AddGuest'
 import ErrorIcon from './ErrorIcon'
 import SubmissionComplete from './SubmissionComplete'
 import SubmitError from './SubmitError'
+import Registry from './Registry'
 import { Section, Button } from '../../../components'
 
 const encode = data =>
@@ -22,6 +23,16 @@ const encode = data =>
 
 const sectionStyles = css`
   background: #f7e9e7;
+`
+
+const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  & > *:not(:last-child) {
+    margin-bottom: 24px;
+  }
 `
 
 const Form = styled.form`
@@ -349,7 +360,12 @@ class rsvp extends Component {
   render() {
     return (
       <Section title="RSVP" name="rsvp" css={sectionStyles}>
-        <Card>{this.renderContents()}</Card>
+        <Layout>
+          <Card>{this.renderContents()}</Card>
+          <Card>
+            <Registry />
+          </Card>
+        </Layout>
       </Section>
     )
   }
