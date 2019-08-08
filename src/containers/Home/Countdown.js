@@ -9,7 +9,8 @@ import {
   subHours,
   differenceInMinutes,
   subMinutes,
-  differenceInSeconds
+  differenceInSeconds,
+  isAfter
 } from 'date-fns'
 import { media } from '../../styles'
 
@@ -85,6 +86,14 @@ class Countdown extends Component {
 
   render() {
     const { monthsLeft, daysLeft, hoursLeft, minutesLeft, secondsLeft } = this.state
+
+    if (isAfter(new Date(), WEDDING_DATE)) {
+      return (
+        <Hero name="countdown" image={countdownLargeImage}>
+          Officially married!
+        </Hero>
+      )
+    }
 
     return (
       <Hero name="countdown" image={countdownLargeImage}>
