@@ -90,7 +90,7 @@ class Countdown extends Component {
     if (isAfter(new Date(), WEDDING_DATE)) {
       return (
         <Hero name="countdown" image={countdownLargeImage}>
-          Officially married!
+          Officially married!!!
         </Hero>
       )
     }
